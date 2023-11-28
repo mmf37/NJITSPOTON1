@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NJIT Spot On</title>
+    <style>
+        body {
+            font-family: Copperplate, verdana;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://nitterhouseconcrete.com/wp-content/uploads/2020/11/Nitterhouse-NJIT-parking-garage-scaled.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+        }
+        .header {
+            background-color: #e60000;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+        .header a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+        }
+        .highlighted {
+            background-color: #e60000;
+            color: white;
+        }
+        .header a.login {
+            padding: 6px 12px;
+            margin-right: 10px;
+        }
+        .title {
+            text-align: center;
+            padding: 60px 0;
+            color: #e60000;
+        }
+        .search-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #searchInput {
+            padding: 10px;
+            width: 300px;
+        }
+        #searchButton {
+            padding: 10px 20px;
+            background-color: #e60000;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="menu">
+                <a href="index.html">Home</a>
+                <a href="About.html">About</a>
+                <a href="booking.html">Booking</a>
+                <a href="payment.html">Payment</a>
+            </div>
+            
+        </div>
+        <div class="title">
+            <h1><span class="highlighted">NJIT SPOT ON</span></h1>
+            <h5><span>So You Can Park On Time</span></h5>
+        </div>
+        <div 
+        </div>
+    </div>
+
+    <script>
+        function performSearch() {
+     
+            var searchTerm = document.getElementById('searchInput').value;
+            alert('Performing search for: ' + searchTerm);
+            
+    </script>
+</body>
+</html>
+<html>
+<head>
+    <title>Payment Page</title>
+    <style>
+        h1 {
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Payment Plan</h1>
+        <div>
+        <label>
+            <input type="radio" name="plan" value="basic">
+            Per Day - $8/Daily
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="radio" name="plan" value="premium">
+            Per Month - $45/Monthly
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="radio" name="plan" value="basic">
+            Per Year - $300/Yearly
+        </label>
+    </div>
+    </header>
+    <main>
+        <!-- Your content goes here -->
+    </main>
+    <footer>
+        <p>&copy; 2023 NJIT SPOT ON</p>
+    </footer>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Form</title>
+    <style>
+        body {
+            background-color: #e60000;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .form {
+            background-color: #e60000;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .form label,
+        .form input,
+        .form button {
+            display: block;
+            margin: 10px;
+        }
+
+        .form input {
+            width: 90%;
+            padding: 10px;
+        }
+
+        .form button {
+            background-color: #e60000;
+            color: //#endregion000000;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        #create-account-form {
+            display: none;
+        }
+    </style>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="your_payment_script.js"></script>
+</head>
+<body>
+    <form id="payment-form">
+        <div>
+            <label for="CardholderName">Cardholder Name:</label>
+            <input type="text" id="CardholderName" name="CardholderName" required>
+        </div>
+
+        <div>
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" name="card-number" required>
+        </div>
+
+        <div>
+            <label for="Expiration">Expiration:</label>
+            <input type="text" id="Expiration" name="Expiration" required>
+        </div>
+
+        <div>
+            <label for="CVV">CVV:</label>
+            <input type="text" id="CVV" name="CVV" required>
+        </div>
+
+        <div>
+            <label for="PostalCode">Postal Code:</label>
+            <input type="text" id="PostalCode" name="PostalCode">
+        </div>
+    </form>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Total Payment Calculation</title>
+</head>
+<body>
+    <div class="payment-form">
+    <form id="payment-form">   
+        <label for="total">Total Payment: $</label>
+        
+        <input type="text" id="total" name="total" value="0.00" readonly>    
+        <button type="submit">Submit Payment</button>
+        <a class="Next" href="Thankyou.html">Next</a>
+    </form>
+    </div>
+    </script>
+</body>
+</html>

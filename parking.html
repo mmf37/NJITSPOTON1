@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+         <html lang="en">
+         <head>
+             <title>NJIT Spot On</title>
+             <style>
+                 body {
+                     font-family: Copperplate, verdana;
+                     margin: 0;
+                     padding: 0;
+                     background-image: url('https://nitterhouseconcrete.com/wp-content/uploads/2020/11/Nitterhouse-NJIT-parking-garage-scaled.jpg');
+                     background-repeat: no-repeat;
+                     background-attachment: fixed;
+                     background-size: cover;
+                 }
+                 .container {
+                     background-color: rgba(255, 255, 255, 0.8);
+                     padding: 20px;
+                 }
+                 .header {
+                     background-color: #e60000;
+                     color: #fff;
+                     display: flex;
+                     justify-content: space-between;
+                     align-items: center;
+                     padding: 10px;
+                 }
+                 .header a {
+                     text-decoration: none;
+                     color: #fff;
+                     padding: 10px 20px;
+                 }
+                 .highlighted {
+                     background-color: #e60000;
+                     color: white;
+                 }
+                 .header a.login {
+                     padding: 6px 12px;
+                     margin-right: 10px;
+                 }
+                 .title {
+                     text-align: center;
+                     padding: 60px 0;
+                     color: #e60000;
+                 }
+                 .search-container {
+                     text-align: center;
+                     margin-top: 20px;
+                 }
+                 #searchInput {
+                     padding: 10px;
+                     width: 300px;
+                 }
+                 #searchButton {
+                     padding: 10px 20px;
+                     background-color: #e60000;
+                     color: white;
+                     border: none;
+                     cursor: pointer;
+                 }
+             </style>
+         </head>
+         <body>
+             <div class="container">
+                 <div class="header">
+                     <div class="menu">
+                         <a href="index.html">Home</a>
+                         <a href="About.html">About</a>
+                         <a href="booking.html">Booking</a>
+                         <a href="payment.html">Payment</a>
+                     </div>
+                     <a class="login" href="login.html">Login</a>
+                 </div>
+                 <div class="title">
+                     <h1><span class="highlighted">NJIT SPOT ON</span></h1>
+                     <h5><span>So You Can Park On Time</span></h5>
+                 </div>
+                 <div class="search-container">
+                     <input type="text" id="searchInput" placeholder="Search...">
+                     <button id="searchButton" onclick="performSearch()">Search</button>
+                     
+    </form>
+                 </div>
+             </div>
+         
+             <script>
+                 function performSearch() {
+              
+                     var searchTerm = document.getElementById('searchInput').value;
+                     alert('Performing search for: ' + searchTerm);
+                     
+             </script>
+         </body>
+         </html> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Availability</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://nitterhouseconcrete.com/wp-content/uploads/2020/11/DSC02477-scaled.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        h1, h2, th {
+            border: 2px solid #e60000;
+            padding: 10px;
+        }
+
+        .floor {
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .available {
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        .occupied {
+            background-color: #d9534f;
+            color: white;
+        }
+
+        canvas {
+            max-width: 500px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Parking Availability</h1>
+
+    <!-- Generate parking spots for each floor -->
+    <div class="floor">
+        <h2>Floor 1</h2>
+        <table id="floor1">
+            <tr>
+                <th>Spot</th>
+                <th>Status</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="floor">
+        <h2>Floor 2</h2>
+        <table id="floor2">
+            <tr>
+                <th>Spot</th>
+                <th>Status</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="floor">
+        <h2>Floor 3</h2>
+        <table id="floor3">
+            <tr>
+                <th>Spot</th>
+                <th>Status</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="floor">
+        <h2>Floor 4</h2>
+        <table id="floor4">
+            <tr>
+                <th>Spot</th>
+                <th>Status</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="floor">
+        <h2>Floor 5</h2>
+        <table id="floor5">
+            <tr>
+                <th>Spot</th>
+                <th>Status</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="floor">
+        <h2>Floor 6</h2>
+        <table id="floor6">
+            <tr>
+                <th>Spot</th>
+                <th>Status</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="floor">
+        <h2>Floor 7</h2>
+        <table id="floor7">
+            <tr>
+                <th>Spot</th>
+                <th>Status</th>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Bar chart to visualize the number of parking spots for each floor -->
+    <canvas id="parkingChart"></canvas>
+
+    <script>
+        // Function to generate parking spots for a floor
+        function generateParkingSpots(floor, totalSpots, availableSpots) {
+            var table = document.getElementById('floor' + floor);
+
+            for (var i = 1; i <= totalSpots; i++) {
+                var row = table.insertRow();
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+
+                cell1.innerHTML = 'Spot ' + i;
+
+                if (i <= availableSpots) {
+                    cell2.innerHTML = 'Available';
+                    cell2.classList.add('available');
+                } else {
+                    cell2.innerHTML = 'Occupied';
+                    cell2.classList.add('occupied');
+                }
+            }
+        }
+
+        // Generate parking spots for each floor
+        generateParkingSpots(1, 100, 70);
+        generateParkingSpots(2, 100, 50);
+        generateParkingSpots(3, 100, 80);
+        generateParkingSpots(4, 100, 90);
+        generateParkingSpots(5, 100, 20);
+        generateParkingSpots(6, 100, 60);
+        generateParkingSpots(7, 100, 30);
+
+        // Bar chart to visualize the number of parking spots for each floor
+        var ctx = document.getElementById('parkingChart').getContext('2d');
+        var parkingChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Floor 1', 'Floor 2', 'Floor 3', 'Floor 4', 'Floor 5', 'Floor 6', 'Floor 7'],
+                datasets: [{
+                    label: 'Number of Parking Spots',
+                    data: [100, 100, 100, 100, 100, 100, 100],
+                    backgroundColor: [
+                        'rgba(230, 0, 0, 0.5)',
+                        'rgba(230, 0, 0, 0.5)',
+                        'rgba(230, 0, 0, 0.5)',
+                        'rgba(230, 0, 0, 0.5)',
+                        'rgba(230, 0, 0, 0.5)',
+                        'rgba(230, 0, 0, 0.5)',
+                        'rgba(230, 0, 0, 0.5)',
+                    ],
+                    borderColor: [
+                        'rgba(230, 0, 0, 1)',
+                        'rgba(230, 0, 0, 1)',
+                        'rgba(230, 0, 0, 1)',
+                        'rgba(230, 0, 0, 1)',
+                        'rgba(230, 0, 0, 1)',
+                        'rgba(230, 0, 0, 1)',
+                        'rgba(230, 0, 0, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

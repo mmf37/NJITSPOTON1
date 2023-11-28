@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NJIT Spot On</title>
+    <style>
+        body {
+            font-family: Copperplate, verdana;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://nitterhouseconcrete.com/wp-content/uploads/2020/11/Nitterhouse-NJIT-parking-garage-scaled.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+        }
+        .header {
+            background-color: #e60000;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+        .header a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+        }
+        .highlighted {
+            background-color: #e60000;
+            color: white;
+        }
+        .header a.login {
+            padding: 6px 12px;
+            margin-right: 10px;
+        }
+        .title {
+            text-align: center;
+            padding: 60px 0;
+            color: #e60000;
+        }
+        .search-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #searchInput {
+            padding: 10px;
+            width: 300px;
+        }
+        #searchButton {
+            padding: 10px 20px;
+            background-color: #e60000;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #language-switcher {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1; /* Ensure it's above the background */
+        }
+
+        #language-dropdown {
+            display: none;
+        }
+
+        #language-dropdown.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="menu">
+                <a href="index.html">Home</a>
+                <a href="About.html">About</a>
+                <a href="booking.html">Booking</a>
+                <a href="payment.html">Payment</a>
+            </div>
+            <a class="login" href="login.html">Login</a>
+        </div>
+        <div class="title">
+            <h1><span class="highlighted">NJIT SPOT ON</span></h1>
+            <h5><span>So You Can Park On Time</span></h5>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button id="searchButton" onclick="performSearch()">Search</button>
+        </div>
+    </div>
+
+    <div id="language-switcher">
+        <button onclick="toggleLanguageDropdown()">Select Language</button>
+        <div id="language-dropdown" class="hidden">
+            <label for="language-select">Select Language:</label>
+            <select id="language-select" onchange="changeLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="ar">Arabic</option>
+                <option value="ch">Chinese</option>
+                
+            </select>
+        </div>
+    </div>
+
+    <script>
+        function toggleLanguageDropdown() {
+            var dropdown = document.getElementById('language-dropdown');
+            dropdown.classList.toggle('show');
+        }
+
+       
+        
+
+        function getSampleContent(languageCode) {
+            
+            switch (languageCode) {
+                case 'en':
+                    return '<p>Hello, this is some content in English.</p>';
+                case 'es':
+                    return '<p>Hola, este es un contenido en español.</p>';
+                case 'fr':
+                    return '<p>Bonjour, voici du contenu en français.</p>';
+                case 'ar':
+                    return '<p>مرحبًا، هذا محتوى باللغة العربية.</p>';
+                case 'ch':
+                    return '<p>你好，这是中文内容。</p>';
+                
+                default:
+                    return '<p>Hello, this is some content in English.</p>';
+            }
+        }
+    </script>
+</body>
+</html>
