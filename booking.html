@@ -1,98 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NJIT Spot On</title>
     <style>
         body {
-            font-family: Copperplate, verdana;
-            margin: 0;
-            padding: 0;
-            background-image: url('https://nitterhouseconcrete.com/wp-content/uploads/2020/11/Nitterhouse-NJIT-parking-garage-scaled.jpg');
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-        }
-        .container {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-        }
-        .header {
-            background-color: #e60000;
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-        }
-        .header a {
-            text-decoration: none;
-            color: #fff;
-            padding: 10px 20px;
-        }
-        .highlighted {
-            background-color: #e60000;
-            color: white;
-        }
-        .header a.login {
-            padding: 6px 12px;
-            margin-right: 10px;
-        }
-        .title {
-            text-align: center;
-            padding: 60px 0;
-            color: #e60000;
-        }
-        .search-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-        #searchInput {
-            padding: 10px;
-            width: 300px;
-        }
-        #searchButton {
-            padding: 10px 20px;
-            background-color: #e60000;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <div class="menu">
-                <a href="index.html">Home</a>
-                <a href="About.html">About</a>
-                <a href="booking.html">Booking</a>
-                <a href="payment.html">Payment</a>
-            </div>
-            
-        </div>
-        <div class="title">
-            <h1><span class="highlighted">NJIT SPOT ON</span></h1>
-            <h5><span>So You Can Park On Time</span></h5>
-        </div>
-        <div 
-        </div>
-    </div>
-
-    <script>
-        function performSearch() {
-     
-            var searchTerm = document.getElementById('searchInput').value;
-            alert('Performing search for: ' + searchTerm);
-            
-    </script>
-</body>
-</html>
-<html>
-<head>
-    <title>NJIT Spot On</title>
-    <style>
-        body {
-            font-family: Copperplate, verdana;
+            font-family: 'Copperplate', 'Verdana', sans-serif;
             margin: 0;
             padding: 0;
             background-image: url('https://nitterhouseconcrete.com/wp-content/uploads/2020/11/DSC02477-scaled.jpg');
@@ -100,10 +15,12 @@
             background-attachment: fixed;
             background-size: cover;
         }
+
         .container {
             background-color: rgba(255, 255, 255, 0.8);
             padding: 100px;
         }
+
         .header {
             background-color: #e60000;
             color: #fff;
@@ -112,22 +29,33 @@
             align-items: center;
             padding: 20px;
         }
+
         .header a {
             text-decoration: none;
             color: #fff;
             padding: 10px 20px;
         }
+
         .highlighted {
             background-color: #e60000;
             color: white;
         }
+
         .header a.login {
             padding: 6px 12px;
             margin-right: 10px;
         }
+
         .title {
             text-align: center;
             padding: 60px 0;
+            color: #e60000;
+        }
+
+        .parking-info {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
             color: #e60000;
         }
     </style>
@@ -136,27 +64,93 @@
     <div class="container">
         <div class="header">
             <div class="menu">
-               <h1>Select A Floor</h1>
-            <p>Select an option from the dropdown menu:</p>
-            <select id="dropdown-menu">
-                <option value="Level1">Level 1</option>
-                <option value="Level2">Level 2</option>
-                <option value="Level3">Level 3</option>
-                <option value="Level4">Level 4</option>
-                <option value="Level5">Level 5</option>
-                <option value="Level6">Level 6</option>
-                <option value="Level7">Level 7</option>
-                
-            </select>
-            <a class="Continue" href="payment.html">Continue</a>
+                <h1>Select A Floor</h1>
+                <label for="dropdown-menu">Choose a floor:</label>
+                <select id="dropdown-menu" onchange="displayParkingInfo()">
+                    <option value="Level1">Level 1</option>
+                    <option value="Level2">Level 2</option>
+                    <option value="Level3">Level 3</option>
+                    <option value="Level4">Level 4</option>
+                    <option value="Level5">Level 5</option>
+                    <option value="Level6">Level 6</option>
+                    <option value="Level7">Level 7</option>
+                </select>
+                <a class="Continue" href="payment.html">Continue</a>
             </div>
             <p>Parking availability <a href="parking.html">parking</a></p>
+            </div>
         </div>
-    
+
         <div class="title">
             <h1><span class="highlighted">NJIT SPOT ON</span></h1>
-            <h5><span >So You Can Park On Time</span></h5>
+            <h5><span>So You Can Park On Time</span></h5>
         </div>
+
+        <div id="parkingInfo" class="parking-info"></div>
     </div>
+
+    <script>
+        var parkingData = {
+            "Level1": {
+                name: "level 1",
+                capacity: 100,
+                availability: 15
+            },
+            "Level2": {
+                name: "Level 2",
+                capacity: 100,
+                availability: 30
+            },
+            "Level3": {
+                name: "Level 3",
+                capacity: 100,
+                availability: 50
+            },
+            "Level4": {
+                name: "level 4",
+                capacity: 100,
+                availability: 78
+            },
+            "Level5": {
+                name: "level 5",
+                capacity: 100,
+                availability: 89
+            },
+            "Level6": {
+                name: "level 6",
+                capacity: 100,
+                availability: 90
+            },
+            "Level7": {
+                name: "level 7",
+                capacity: 100,
+                availability: 97
+            },
+        
+        };
+
+        function displayParkingInfo() {
+            var dropdown = document.getElementById("dropdown-menu");
+            var selectedFloor = dropdown.options[dropdown.selectedIndex].value;
+            var parkingInfoElement = document.getElementById("parkingInfo");
+
+            var parkingInfo = getParkingInfo(selectedFloor);
+
+            parkingInfoElement.innerHTML = "<p>" + parkingInfo + "</p>";
+        }
+
+        function getParkingInfo(floor) {
+            var data = parkingData[floor];
+            if (data) {
+                return `
+                    <strong>${data.name}</strong><br>
+                    Capacity: ${data.capacity}<br>
+                    Availability: ${data.availability}
+                `;
+            } else {
+                return "No information available for this floor.";
+            }
+        }
+    </script>
 </body>
 </html>
